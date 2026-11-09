@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Texto del chip: negro sobre amarillo cuando está elegido; si no, el color de texto del tema -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/negro_fijo" android:state_checked="true" />
+    <item android:color="@color/texto" />
+</selector>

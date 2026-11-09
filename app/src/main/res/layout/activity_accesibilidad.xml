@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Accesibilidad: tamaño de texto, texto fácil de leer y sonido de bienvenida -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".accesibilidad">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresarAccesibilidad"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:onClick="regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <TextView
+            style="@style/Upn.Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="start"
+            android:text="@string/t_accesibilidad" />
+
+        <TextView
+            style="@style/Upn.Subtitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="start"
+            android:text="@string/t_ajusta_la_app_para_leerla_y_usarla_con" />
+
+        <!-- Vista previa -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/superficie_suave"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/Upn.Ayuda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/t_vista_previa" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/t_fisica_universitaria"
+                    android:textColor="@color/texto"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/t_volumen_1_13ra_edicion_sin_subrayados"
+                    android:textColor="@color/texto_medio"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tamaño de texto -->
+        <TextView
+            style="@style/Upn.Seccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/t_tamano_de_texto" />
+
+        <RadioGroup
+            android:id="@+id/rgTamanoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <RadioButton
+                android:id="@+id/rbTextoNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/t_normal"
+                android:textColor="@color/texto" />
+
+            <RadioButton
+                android:id="@+id/rbTextoGrande"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/t_grande"
+                android:textColor="@color/texto" />
+
+            <RadioButton
+                android:id="@+id/rbTextoMuyGrande"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/t_muy_grande"
+                android:textColor="@color/texto" />
+        </RadioGroup>
+
+        <TextView
+            style="@style/Upn.Ayuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/t_se_suma_al_tamano_de_letra_que_tengas" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/linea" />
+
+        <!-- Texto fácil de leer -->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swTextoLegible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="56dp"
+            android:text="@string/t_texto_facil_de_leer"
+            android:textColor="@color/texto"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/Upn.Ayuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/t_usa_una_fuente_disenada_para_distingui" />
+
+        <!-- Sonido de bienvenida -->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swSonidoBienvenida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minHeight="56dp"
+            android:text="@string/t_sonido_de_bienvenida"
+            android:textColor="@color/texto"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/Upn.Ayuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/t_musica_corta_al_abrir_la_app" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/linea" />
+
+        <!-- Colores: lo resuelve el sistema -->
+        <TextView
+            style="@style/Upn.Seccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/t_colores" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/t_la_app_no_depende_solo_del_color_los_f"
+            android:textColor="@color/texto_medio"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAccesibilidadSistema"
+            style="@style/Upn.Boton.Gris"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="52dp"
+            android:onClick="abrirAccesibilidadSistema"
+            android:text="@string/t_abrir_accesibilidad_del_celular"
+            app:cornerRadius="14dp" />
+
+    </LinearLayout>
+</ScrollView>

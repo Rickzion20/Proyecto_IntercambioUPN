@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    android:padding="24dp"
+    tools:context=".ajustes">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btnRegresarAjustes"
+        android:onClick="regresar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-4dp"
+        android:background="@drawable/bg_boton_atras"
+        android:contentDescription="@string/t_regresar"
+        android:scaleType="center"
+        android:src="@drawable/ic_atras"
+        android:tooltipText="@string/t_regresar" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        style="@style/Upn.Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/t_ajustes" />
+
+    <TextView
+        style="@style/Upn.Subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/t_personaliza_tu_experiencia" />
+
+    <!-- Idioma -->
+    <TextView
+        style="@style/Upn.Seccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/t_idioma" />
+
+    <RadioGroup
+        android:id="@+id/rgIdioma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp">
+
+        <RadioButton
+            android:id="@+id/rbEspanol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/t_espanol"
+            android:textColor="@color/texto" />
+
+        <RadioButton
+            android:id="@+id/rbIngles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/t_english_proximamente"
+            android:textColor="@color/texto" />
+    </RadioGroup>
+
+    <!-- Tema -->
+    <TextView
+        style="@style/Upn.Seccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/t_tema" />
+
+    <RadioGroup
+        android:id="@+id/rgTema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp">
+
+        <RadioButton
+            android:id="@+id/rbSistema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/t_segun_el_sistema"
+            android:textColor="@color/texto" />
+
+        <RadioButton
+            android:id="@+id/rbClaro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/t_claro"
+            android:textColor="@color/texto" />
+
+        <RadioButton
+            android:id="@+id/rbOscuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/t_oscuro"
+            android:textColor="@color/texto" />
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/linea" />
+
+    <!-- Accesos -->
+    <Button
+        style="@style/Upn.Boton.Gris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="52dp"
+        android:layout_marginTop="20dp"
+        android:onClick="abrirPerfil"
+        android:text="@string/t_mi_perfil" />
+
+    <Button
+        style="@style/Upn.Boton.Gris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="52dp"
+        android:layout_marginTop="12dp"
+        android:onClick="abrirAccesibilidad"
+        android:text="@string/t_accesibilidad" />
+
+    <Button
+        style="@style/Upn.Boton.Amarillo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="52dp"
+        android:layout_marginTop="12dp"
+        android:onClick="abrirAyuda"
+        android:text="@string/t_ayuda_y_soporte" />
+
+</LinearLayout>
+
+</ScrollView>

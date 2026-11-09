@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Colores con nombre de IntercambioUPN (tema claro).
+    La versión oscura de cada uno está en values-night/colores_tema.xml.
+    En las pantallas se usan siempre estos nombres, nunca el código #RRGGBB directo.
+-->
+<resources>
+    <!-- Marca: iguales en claro y oscuro -->
+    <color name="amarillo">#FFD600</color>
+    <color name="negro_fijo">#111111</color>     <!-- texto sobre amarillo -->
+    <color name="blanco_fijo">#FFFFFF</color>    <!-- texto sobre rojo -->
+    <color name="rojo_favorito">#E53935</color>
+
+    <!-- Fondos y superficies -->
+    <color name="fondo">#FFFFFF</color>
+    <color name="superficie">#FFFFFF</color>        <!-- tarjetas -->
+    <color name="superficie_suave">#F2F2F2</color>  <!-- buscador, chips, círculos, categorías -->
+    <color name="boton_gris">#EEEEEE</color>
+    <color name="boton_negro">#111111</color>
+    <color name="amarillo_claro">#FFF0A6</color>    <!-- etiqueta de estado -->
+    <color name="amarillo_tenue">#FFF8D6</color>    <!-- avisos, no leídas -->
+    <color name="linea">#E6E6E6</color>
+    <color name="linea_campo">#CCCCCC</color>
+    <color name="ripple">#26000000</color>
+
+    <!-- Textos e íconos -->
+    <color name="texto">#111111</color>
+    <color name="texto_medio">#444444</color>
+    <color name="texto_secundario">#666666</color>
+    <color name="texto_terciario">#777777</color>
+    <color name="enlace">#8A6800</color>
+    <color name="error">#D32F2F</color>
+    <color name="icono">#111111</color>
+    <color name="icono_secundario">#757575</color>
+
+    <!-- Chat -->
+    <color name="burbuja_mia">#FFE15A</color>
+    <color name="burbuja_otro">#F0F0F0</color>
+
+    <!-- Estados de los acuerdos -->
+    <color name="estado_pendiente">#FFF0A6</color>
+    <color name="estado_prestado">#D6E8FF</color>
+    <color name="estado_completado">#D7F5DD</color>
+    <color name="estado_cancelado">#F5D7D7</color>
+</resources>

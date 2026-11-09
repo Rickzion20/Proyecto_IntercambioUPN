@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".crear_cuenta">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:onClick="regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/t_logo_upn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logoupn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/t_crear_cuenta"
+            android:textColor="@color/texto"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/t_registrate_para_intercambiar_materiale"
+            android:textColor="@color/texto_secundario"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/t_nombres"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_ingresa_tus_nombres"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/t_apellidos"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_ingresa_tus_apellidos"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:id="@+id/lblCorreoRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/t_correo_institucional"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_ejemplo_alumno_upn_pe"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/t_carrera_profesional"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtCarrera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_ingresa_tu_carrera"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/t_contrasena"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_crea_una_contrasena"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/t_confirmar_contrasena"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtConfirmarContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_repite_tu_contrasena"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <Button
+            android:id="@+id/btnRegistrarCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/amarillo"
+            android:text="@string/t_crear_cuenta_2"
+            android:textColor="@color/negro_fijo"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:onClick="crearcuenta"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/t_al_registrarte_podras_publicar_y_encon"
+            android:textColor="@color/texto_terciario"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>

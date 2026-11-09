@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".favoritos">
+
+    <ImageButton
+        android:id="@+id/btnRegresarFavoritos"
+        android:onClick="regresar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-4dp"
+        android:background="@drawable/bg_boton_atras"
+        android:contentDescription="@string/t_regresar"
+        android:scaleType="center"
+        android:src="@drawable/ic_atras"
+        android:tooltipText="@string/t_regresar" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        style="@style/Upn.Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/t_mis_favoritos" />
+
+    <TextView
+        style="@style/Upn.Subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/t_materiales_que_guardaste_para_revisar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/linea" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="-10dp" />
+
+        <TextView
+            android:id="@+id/txtSinFavoritos"
+            style="@style/Upn.Mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/t_aun_no_tienes_favoritos_toca_el_corazo"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name" translatable="false">IntercambioUPN</string>
+    <string-array name="categorias_material">
+        <item>Todas las categorías</item>
+        <item>Libros</item>
+        <item>Apuntes</item>
+        <item>Tecnología</item>
+        <item>Accesorios</item>
+        <item>Otros objetos</item>
+    </string-array>
+
+    <string-array name="tipos_intercambio">
+        <item>Todos</item>
+        <item>Intercambio</item>
+        <item>Préstamo</item>
+        <item>Donación</item>
+    </string-array>
+
+    <string-array name="estados_material">
+        <item>Todos los estados</item>
+        <item>Nuevo</item>
+        <item>Buen estado</item>
+        <item>Usado</item>
+    </string-array>
+
+    <string-array name="sedes_universitarias">
+        <item>Todas las sedes</item>
+        <item>Los Olivos</item>
+        <item>Comas</item>
+        <item>Breña</item>
+        <item>Chorrilos</item>
+        <item>Ate</item>
+        <item>San Juan de Lurigancho</item>
+        <item>Trujillo El Molino</item>
+        <item>Trujillo San Isidro</item>
+        <item>Cajamarca</item>
+    </string-array>
+
+    <!-- Estados de un acuerdo (se guardan en español; en pantalla se traducen con Catalogo) -->
+    <string-array name="estados_acuerdo">
+        <item>Pendiente</item>
+        <item>Prestado</item>
+        <item>Completado</item>
+        <item>Cancelado</item>
+    </string-array>
+</resources>

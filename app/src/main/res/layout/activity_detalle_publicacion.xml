@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".detalle_publicacion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:onClick="regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <ImageView
+            android:id="@+id/imgDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/superficie_suave"
+            android:contentDescription="@string/t_foto_del_material"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtDetalleNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/t_nombre_del_material"
+                android:textColor="@color/texto"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <!-- HU15: corazón de favoritos -->
+            <ImageView
+                android:id="@+id/btnFavoritoDetalle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/t_agregar_a_favoritos"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_corazon_vacio" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtDetalleCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/superficie_suave"
+                android:paddingStart="10dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="4dp"
+                android:text="@string/t_categoria"
+                android:textColor="@color/texto"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txtDetalleEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@color/amarillo_claro"
+                android:paddingStart="10dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="4dp"
+                android:text="@string/t_estado"
+                android:textColor="@color/texto"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/t_modalidad"
+            android:textColor="@color/texto_terciario"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtDetalleTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:text="@string/t_intercambio"
+            android:textColor="@color/texto"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/t_sede"
+            android:textColor="@color/texto_terciario"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtDetalleSede"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:text="@string/t_los_olivos"
+            android:textColor="@color/texto"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/amarillo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/t_descripcion"
+            android:textColor="@color/texto"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDetalleDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:text="@string/t_descripcion"
+            android:textColor="@color/texto_medio"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/t_publicado_por"
+            android:textColor="@color/texto"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDetallePublicador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:text="@string/t_estudiante_upn"
+            android:textColor="@color/texto"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtDetalleCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:text="@string/t_correo_upn_pe"
+            android:textColor="@color/texto_secundario"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnContactar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/amarillo"
+            android:onClick="contactar"
+            android:text="@string/t_contactar"
+            android:textAllCaps="false"
+            android:textColor="@color/negro_fijo"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layoutAccionesPropietario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnEditarDesdeDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+            android:minHeight="55dp"
+                android:backgroundTint="@color/amarillo"
+                android:onClick="editar"
+                android:text="@string/t_editar_publicacion"
+                android:textAllCaps="false"
+                android:textColor="@color/negro_fijo"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnEliminarDesdeDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+            android:minHeight="52dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/boton_gris"
+                android:onClick="eliminar"
+                android:text="@string/t_eliminar_publicacion"
+                android:textAllCaps="false"
+                android:textColor="@color/texto" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+    </LinearLayout>
+</ScrollView>

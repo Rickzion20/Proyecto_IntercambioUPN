@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".editar_publicacion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:onClick="regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/t_editar_publicacion_2"
+            android:textColor="@color/texto"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/t_modifica_los_datos_de_tu_material_y_gu"
+            android:textColor="@color/texto_secundario"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/t_url_de_la_imagen"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtUrlImagen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_ingresa_la_url_de_la_imagen"
+            android:inputType="textUri"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_nombre_del_material"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNombreMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:hint="@string/t_nombre_del_material"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_categoria"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spCategoriaMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:entries="@array/categorias_material" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_descripcion"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtDescripcionMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:gravity="top"
+            android:hint="@string/t_descripcion_del_material"
+            android:inputType="textMultiLine|textCapSentences"
+            android:padding="12dp"
+            android:backgroundTint="@color/linea_campo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_modalidad"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spTipoIntercambio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:entries="@array/tipos_intercambio" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_estado_del_material"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spEstadoMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:entries="@array/estados_material" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_sede_universitaria"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spSedeMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:entries="@array/sedes_universitarias" />
+
+        <Button
+            android:id="@+id/btnGuardarCambios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/amarillo"
+            android:text="@string/t_guardar_cambios_2"
+            android:textColor="@color/negro_fijo"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:onClick="actualizarPublicacion" />
+
+        <Button
+            android:id="@+id/btnEliminarPublicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/boton_negro"
+            android:text="@string/t_eliminar_publicacion_2"
+            android:textColor="@color/amarillo"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:onClick="irEliminarPublicacion" />
+
+        <Button
+            android:id="@+id/btnCancelarEdicion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/boton_gris"
+            android:text="@string/t_cancelar"
+            android:textColor="@color/texto"
+            android:textAllCaps="false"
+            android:onClick="regresar" />
+
+    </LinearLayout>
+</ScrollView>

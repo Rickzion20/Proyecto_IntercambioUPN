@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="28dp"
+    android:background="@color/fondo"
+    tools:context=".sesion_cerrada">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:background="@color/amarillo"
+        android:text="✓"
+        android:textColor="@color/negro_fijo"
+        android:textSize="65sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/t_sesion_cerrada"
+        android:textColor="@color/texto"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/t_has_cerrado_tu_sesion_correctamente_gr"
+        android:textColor="@color/texto_secundario"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnVolverInicioSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="55dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/amarillo"
+        android:text="@string/t_volver_al_inicio_de_sesion"
+        android:onClick="volverinicio"
+        android:textColor="@color/negro_fijo"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+
+</LinearLayout>
+

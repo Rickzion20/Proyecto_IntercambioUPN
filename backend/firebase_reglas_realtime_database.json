@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "Usuarios": {
+      "$uid": {
+        ".read": "auth != null && (auth.token.email.toLowerCase().endsWith('@upn.pe') || auth.token.email.toLowerCase().endsWith('@gmail.com'))",
+        ".write": "auth != null && auth.uid === $uid && (auth.token.email.toLowerCase().endsWith('@upn.pe') || auth.token.email.toLowerCase().endsWith('@gmail.com'))",
+
+        "uid": { ".validate": "newData.val() === $uid" },
+        "correo": { ".validate": "newData.isString() && newData.val().toLowerCase() === auth.token.email.toLowerCase()" },
+        "tipoUsuario": { ".validate": "(auth.token.email.toLowerCase().endsWith('@upn.pe') && newData.val() === 'estudiante_upn') || (auth.token.email.toLowerCase().endsWith('@gmail.com') && newData.val() === 'gmail')" },
+        "codigoEstudiante": { ".validate": "auth.token.email.toLowerCase().endsWith('@upn.pe') && newData.val() === auth.token.email.toLowerCase().replace('@upn.pe', '').toUpperCase()" },
+
+        "nombres": { ".validate": "newData.isString() && newData.val().length <= 100" },
+        "apellidos": { ".validate": "newData.isString() && newData.val().length <= 100" },
+        "carrera": { ".validate": "newData.isString() && newData.val().length <= 120" },
+        "ciclo": { ".validate": "newData.isString() && newData.val().length <= 2" },
+        "sede": { ".validate": "newData.isString() && newData.val().length <= 60" },
+        "fotoUrl": { ".validate": "newData.isString() && newData.val().length <= 500" },
+
+        "privacidad": {
+          "visibilidad": { ".validate": "newData.isString() && newData.val().length <= 30" },
+          "mostrarCorreo": { ".validate": "newData.isBoolean()" },
+          "mostrarCarreraCiclo": { ".validate": "newData.isBoolean()" },
+          "$otro": { ".validate": false }
+        },
+
+        "$otro": { ".validate": false }
+      }
+    }
+  }
+}

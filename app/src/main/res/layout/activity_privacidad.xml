@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".privacidad">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresarPrivacidad"
+            android:onClick="regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <TextView
+            style="@style/Upn.Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/t_privacidad_y_seguridad" />
+
+        <TextView
+            style="@style/Upn.Subtitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/t_decide_quien_puede_ver_tu_informacion" />
+
+        <TextView
+            style="@style/Upn.Seccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/t_visibilidad_del_perfil" />
+
+        <RadioGroup
+            android:id="@+id/rgVisibilidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <RadioButton
+                android:id="@+id/rbPublico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/t_perfil_publico"
+                android:textColor="@color/texto" />
+
+            <RadioButton
+                android:id="@+id/rbUpn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:checked="true"
+                android:text="@string/t_solo_universitarios_upn"
+                android:textColor="@color/texto" />
+
+            <RadioButton
+                android:id="@+id/rbContactos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/t_solo_contactos"
+                android:textColor="@color/texto" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/linea" />
+
+        <TextView
+            style="@style/Upn.Seccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/t_datos_que_se_muestran" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:text="@string/t_mostrar_mi_correo_institucional"
+            android:textColor="@color/texto" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swCarreraCiclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:text="@string/t_mostrar_mi_carrera_y_ciclo"
+            android:textColor="@color/texto" />
+
+        <TextView
+            style="@style/Upn.Subtitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/t_si_ocultas_tu_correo_no_aparecera_en_t" />
+
+        <Button
+            android:id="@+id/btnGuardarPrivacidad"
+            style="@style/Upn.Boton.Amarillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="guardar"
+            android:text="@string/t_guardar_cambios" />
+
+    </LinearLayout>
+</ScrollView>

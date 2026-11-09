@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".editar_perfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresarEditarPerfil"
+            android:onClick="regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <TextView
+            style="@style/Upn.Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/t_actualizar_datos" />
+
+        <TextView
+            style="@style/Upn.Subtitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/t_manten_tu_perfil_al_dia" />
+
+        <EditText
+            android:id="@+id/txtEditNombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="22dp"
+            android:hint="@string/t_nombres"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName|textCapWords"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/txtEditApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="6dp"
+            android:hint="@string/t_apellidos"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName|textCapWords"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/txtEditCarrera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="6dp"
+            android:hint="@string/t_carrera_profesional"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/txtEditCiclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="6dp"
+            android:hint="@string/t_ciclo_1_a_10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="2"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/txtEditCodigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="6dp"
+            android:hint="@string/t_codigo_de_estudiante_ej_n00392927"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLength="12"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/t_sede"
+            android:textColor="@color/texto_terciario"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/spEditSede"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp" />
+
+        <Button
+            android:id="@+id/btnGuardarPerfil"
+            style="@style/Upn.Boton.Amarillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:layout_marginTop="24dp"
+            android:onClick="guardar"
+            android:text="@string/t_guardar_cambios" />
+
+        <Button
+            style="@style/Upn.Boton.Gris"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="regresar"
+            android:text="@string/t_cancelar" />
+
+    </LinearLayout>
+</ScrollView>

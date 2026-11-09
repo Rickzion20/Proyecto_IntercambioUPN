@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".cambiar_contrasena">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:onClick="regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_regresar"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_regresar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/t_cambiar_contrasena"
+            android:textColor="@color/texto"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/t_ingresa_tu_contrasena_actual_y_elige_u"
+            android:textColor="@color/texto_secundario"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/t_contrasena_actual"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtContrasenaActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/linea_campo"
+            android:hint="@string/t_contrasena_actual"
+            android:inputType="textPassword"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/t_nueva_contrasena"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNuevaContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/linea_campo"
+            android:hint="@string/t_nueva_contrasena"
+            android:inputType="textPassword"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/t_confirmar_nueva_contrasena"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtConfirmarNuevaContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/linea_campo"
+            android:hint="@string/t_repite_la_nueva_contrasena"
+            android:inputType="textPassword"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/amarillo_tenue"
+            android:lineSpacingExtra="3dp"
+            android:padding="14dp"
+            android:text="@string/t_la_contrasena_debe_tener_minimo_8_cara"
+            android:textColor="@color/texto"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnActualizarContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/amarillo"
+            android:onClick="actualizarContrasena"
+            android:text="@string/t_actualizar_contrasena"
+            android:textAllCaps="false"
+            android:textColor="@color/negro_fijo"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/boton_gris"
+            android:onClick="regresar"
+            android:text="@string/t_cancelar"
+            android:textAllCaps="false"
+            android:textColor="@color/texto" />
+
+    </LinearLayout>
+</ScrollView>

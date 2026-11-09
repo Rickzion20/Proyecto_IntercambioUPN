@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+        Tema base en modo oscuro: es el mismo que el claro.
+        Los colores cambian solos porque cada @color tiene su versión en values-night/colores_tema.xml.
+    -->
+    <style name="Base.Theme.IntercambioUPN" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto</item>
+        <item name="android:textColorPrimary">@color/texto</item>
+        <item name="android:textColorSecondary">@color/texto_secundario</item>
+    </style>
+</resources>

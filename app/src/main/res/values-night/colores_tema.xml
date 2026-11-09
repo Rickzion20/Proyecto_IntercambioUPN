@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Colores de IntercambioUPN en modo oscuro (mismos nombres que values/colores_tema.xml) -->
+<resources>
+    <color name="fondo">#121212</color>
+    <color name="superficie">#1E1E1E</color>
+    <color name="superficie_suave">#262626</color>
+    <color name="boton_gris">#2E2E2E</color>
+    <color name="boton_negro">#2B2B2B</color>
+    <color name="amarillo_claro">#5C4D00</color>
+    <color name="amarillo_tenue">#2E2700</color>
+    <color name="linea">#333333</color>
+    <color name="linea_campo">#5A5A5A</color>
+    <color name="ripple">#33FFFFFF</color>
+
+    <color name="texto">#F2F2F2</color>
+    <color name="texto_medio">#D0D0D0</color>
+    <color name="texto_secundario">#B3B3B3</color>
+    <color name="texto_terciario">#9A9A9A</color>
+    <color name="enlace">#FFD600</color>
+    <color name="error">#FF6B6B</color>
+    <color name="icono">#F2F2F2</color>
+    <color name="icono_secundario">#A0A0A0</color>
+
+    <color name="burbuja_mia">#5C4D00</color>
+    <color name="burbuja_otro">#2A2A2A</color>
+
+    <color name="estado_pendiente">#5C4D00</color>
+    <color name="estado_prestado">#1E3A5F</color>
+    <color name="estado_completado">#1E4D2B</color>
+    <color name="estado_cancelado">#5A1F1F</color>
+</resources>

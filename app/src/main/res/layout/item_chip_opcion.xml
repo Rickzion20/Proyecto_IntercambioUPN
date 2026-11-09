@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chip de opción única (Tipo de intercambio / Estado del material) -->
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.Chip.Filter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:checkable="true"
+    android:textColor="@color/chip_opcion_texto"
+    android:textSize="14sp"
+    app:checkedIconVisible="true"
+    app:checkedIconTint="@color/negro_fijo"
+    app:chipBackgroundColor="@color/chip_opcion_fondo"
+    app:chipCornerRadius="20dp"
+    app:chipMinHeight="40dp"
+    app:chipStrokeColor="@color/chip_opcion_borde"
+    app:chipStrokeWidth="1dp" />

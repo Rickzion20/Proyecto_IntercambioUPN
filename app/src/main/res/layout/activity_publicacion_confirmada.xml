@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="28dp"
+    tools:context=".publicacion_confirmada">
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/amarillo"
+        android:gravity="center"
+        android:text="✓"
+        android:textColor="@color/negro_fijo"
+        android:textSize="65sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/t_material_publicado"
+        android:textColor="@color/texto"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/t_tu_material_fue_publicado_correctament"
+        android:textColor="@color/texto_secundario"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnVolverInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="55dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/amarillo"
+        android:onClick="volverInicio"
+        android:text="@string/t_volver_al_inicio"
+        android:textAllCaps="false"
+        android:textColor="@color/negro_fijo"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

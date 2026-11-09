@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "170096001884",
+    "project_id": "intercambioupn-d2d74",
+    "storage_bucket": "intercambioupn-d2d74.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170096001884:android:108a8536fdbb2db735b799",
+        "android_client_info": {
+          "package_name": "com.example.intercambioupn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-li_xGyl-UsZZZm_YOFAIzjY9y4Yfxh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

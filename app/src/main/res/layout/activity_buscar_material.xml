@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Toda la pantalla se desplaza junta (encabezado + buscador + lista), igual que Inicio -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    android:padding="24dp"
+    tools:context=".buscar_material">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btnRegresar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-4dp"
+        android:background="@drawable/bg_boton_atras"
+        android:contentDescription="@string/t_regresar"
+        android:scaleType="center"
+        android:src="@drawable/ic_atras"
+        android:tooltipText="@string/t_regresar" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        android:id="@+id/txtTituloBuscar"
+        style="@style/Upn.Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/t_buscar_material" />
+
+    <TextView
+        android:id="@+id/txtSubtituloBuscar"
+        style="@style/Upn.Subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/t_encuentra_libros_apuntes_y_mas" />
+
+    <!-- Buscador: tarjeta redondeada con campo + botón de lupa -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        android:layout_marginTop="22dp"
+        app:cardBackgroundColor="@color/superficie_suave"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="6dp">
+
+            <EditText
+                android:id="@+id/txtBuscarMaterial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/t_libro_apuntes_otros"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto_terciario"
+                android:textSize="15sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuscar"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+            android:minHeight="44dp"
+                android:contentDescription="@string/t_buscar"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:padding="0dp"
+                app:backgroundTint="@color/amarillo"
+                app:cornerRadius="11dp"
+                app:icon="@drawable/ic_buscar"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="@color/negro_fijo" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAbrirFiltros"
+        style="@style/Upn.Boton.Gris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="52dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/t_filtros"
+        app:cornerRadius="14dp"
+        app:icon="@drawable/ic_filtro"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="20dp"
+        app:iconTint="@color/icono" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/linea" />
+
+    <!-- HU25: búsquedas recientes (se oculta si no hay historial) -->
+    <LinearLayout
+        android:id="@+id/layoutRecientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Upn.Seccion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/t_busquedas_recientes" />
+
+            <TextView
+                android:id="@+id/btnBorrarRecientes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:text="@string/t_borrar_todo"
+                android:textColor="@color/texto_secundario"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipsRecientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/linea" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtTituloResultados"
+        style="@style/Upn.Seccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/t_todos_los_materiales" />
+
+    <!-- Mensaje (cargando / sin resultados) -->
+    <TextView
+        android:id="@+id/txtMensajeResultados"
+        style="@style/Upn.Mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="48dp"
+        android:text="@string/t_cargando_materiales" />
+
+    <!-- Lista: no hace scroll propio, se desplaza con toda la pantalla -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaResultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginHorizontal="-10dp"
+        android:nestedScrollingEnabled="false" />
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

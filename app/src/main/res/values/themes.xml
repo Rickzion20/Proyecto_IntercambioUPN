@@ -1,0 +1,135 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.IntercambioUPN" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Claro / oscuro: los colores con nombre cambian solos (values-night) -->
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto</item>
+        <item name="android:textColorPrimary">@color/texto</item>
+        <item name="android:textColorSecondary">@color/texto_secundario</item>
+    </style>
+
+    <style name="Theme.IntercambioUPN" parent="Base.Theme.IntercambioUPN" />
+
+    <!-- ===== Estilos reutilizables de la app ===== -->
+
+    <!-- Encabezado de pantalla -->
+    <style name="Upn.Titulo" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Upn.Subtitulo" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/texto_secundario</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Upn.Seccion" parent="">
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Upn.Mensaje" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">@color/texto_terciario</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Botones -->
+    <style name="Upn.Boton" parent="Widget.Material3.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Upn.Boton.Amarillo">
+        <item name="backgroundTint">@color/amarillo</item>
+        <item name="android:textColor">@color/negro_fijo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Upn.Boton.Gris">
+        <item name="backgroundTint">@color/boton_gris</item>
+    </style>
+    <!-- Campos de formulario (Publicar / Editar) -->
+    <style name="Upn.Campo" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/texto</item>
+        <item name="hintTextColor">@color/texto</item>
+    </style>
+
+    <style name="Upn.Campo.Lista" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/texto</item>
+        <item name="hintTextColor">@color/texto</item>
+    </style>
+
+    <!-- Encabezado de cada bloque del formulario -->
+    <style name="Upn.Bloque" parent="">
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Upn.Ayuda" parent="">
+        <item name="android:textColor">@color/texto_terciario</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- ===== Accesibilidad: "Texto fácil de leer" ===== -->
+    <!-- Fuente Atkinson Hyperlegible + más espacio entre letras y líneas -->
+    <style name="Theme.IntercambioUPN.Legible" parent="Theme.IntercambioUPN">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="fontFamily">@font/atkinson</item>
+        <item name="android:textViewStyle">@style/Upn.TextoLegible</item>
+        <item name="editTextStyle">@style/Upn.CampoLegible</item>
+        <item name="textAppearanceBodyLarge">@style/Upn.Apariencia.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/Upn.Apariencia.BodyMedium</item>
+        <item name="textAppearanceLabelLarge">@style/Upn.Apariencia.LabelLarge</item>
+        <item name="textAppearanceTitleMedium">@style/Upn.Apariencia.TitleMedium</item>
+    </style>
+
+    <style name="Upn.TextoLegible" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="Upn.CampoLegible" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="Upn.Apariencia.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="fontFamily">@font/atkinson</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Upn.Apariencia.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="fontFamily">@font/atkinson</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Upn.Apariencia.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="fontFamily">@font/atkinson</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Upn.Apariencia.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/atkinson</item>
+        <item name="fontFamily">@font/atkinson</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+</resources>

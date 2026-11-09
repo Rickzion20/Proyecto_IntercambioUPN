@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    English. Same order as values/strings.xml: the app stores the Spanish value
+    and shows the item at the same position in this list (see Catalogo.java).
+-->
+<resources>
+    <string-array name="categorias_material">
+        <item>All categories</item>
+        <item>Books</item>
+        <item>Notes</item>
+        <item>Technology</item>
+        <item>Accessories</item>
+        <item>Other items</item>
+    </string-array>
+
+    <string-array name="tipos_intercambio">
+        <item>All</item>
+        <item>Exchange</item>
+        <item>Loan</item>
+        <item>Donation</item>
+    </string-array>
+
+    <string-array name="estados_material">
+        <item>All conditions</item>
+        <item>New</item>
+        <item>Good condition</item>
+        <item>Used</item>
+    </string-array>
+
+    <string-array name="sedes_universitarias">
+        <item>All campuses</item>
+        <item>Los Olivos</item>
+        <item>Comas</item>
+        <item>Breña</item>
+        <item>Chorrilos</item>
+        <item>Ate</item>
+        <item>San Juan de Lurigancho</item>
+        <item>Trujillo El Molino</item>
+        <item>Trujillo San Isidro</item>
+        <item>Cajamarca</item>
+    </string-array>
+
+    <string-array name="estados_acuerdo">
+        <item>Pending</item>
+        <item>On loan</item>
+        <item>Completed</item>
+        <item>Cancelled</item>
+    </string-array>
+</resources>

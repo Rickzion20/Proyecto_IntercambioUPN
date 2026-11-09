@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="28dp"
+    android:background="@color/fondo"
+    tools:context=".eliminar_publicacion">
+
+    <ImageButton
+        android:id="@+id/btnRegresar"
+        android:onClick="regresar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-4dp"
+        android:background="@drawable/bg_boton_atras"
+        android:contentDescription="@string/t_regresar"
+        android:scaleType="center"
+        android:src="@drawable/ic_atras"
+        android:tooltipText="@string/t_regresar" />
+
+    <ImageView
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="55dp"
+        android:gravity="center"
+        android:src="@drawable/eliminar"
+        android:textSize="48sp"
+        android:contentDescription="@string/t_icono_eliminar_publicacion" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/t_eliminar_publicacion_3"
+        android:textColor="@color/texto"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtNombreMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:text="@string/t_nombre_del_material"
+        android:textColor="@color/texto"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/t_esta_accion_eliminara_tu_publicacion_d"
+        android:textColor="@color/texto_secundario"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnConfirmarEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="55dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/boton_negro"
+        android:text="@string/t_si_eliminar_publicacion"
+        android:textColor="@color/amarillo"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:onClick="confirmarEliminar" />
+
+    <Button
+        android:id="@+id/btnCancelarEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="52dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/boton_gris"
+        android:text="@string/t_cancelar"
+        android:textColor="@color/texto"
+        android:textAllCaps="false"
+        android:onClick="regresar" />
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/fondo"
+    android:padding="28dp"
+    tools:context=".cuenta_creada">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:background="@color/amarillo"
+        android:text="✓"
+        android:textColor="@color/negro_fijo"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/t_cuenta_creada"
+        android:textColor="@color/texto"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtMensajeCuentaCreada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/t_tu_registro_se_ha_completado_correctam"
+        android:textColor="@color/texto_secundario"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnIrIniciarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="55dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/amarillo"
+        android:text="@string/t_ir_a_iniciar_sesion"
+        android:textColor="@color/negro_fijo"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:onClick="irIniciarSesion" />
+
+</LinearLayout>
+

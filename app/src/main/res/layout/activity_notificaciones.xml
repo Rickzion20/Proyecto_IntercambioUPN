@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".notificaciones">
+
+    <ImageButton
+        android:id="@+id/btnRegresarNotificaciones"
+        android:onClick="regresar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-4dp"
+        android:background="@drawable/bg_boton_atras"
+        android:contentDescription="@string/t_regresar"
+        android:scaleType="center"
+        android:src="@drawable/ic_atras"
+        android:tooltipText="@string/t_regresar" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/t_logo_upn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoupn" />
+
+    <TextView
+        style="@style/Upn.Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/t_notificaciones" />
+
+    <TextView
+        style="@style/Upn.Subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/t_toca_una_notificacion_para_marcarla_co" />
+
+    <Button
+        style="@style/Upn.Boton.Gris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:minHeight="50dp"
+        android:layout_marginTop="20dp"
+        android:onClick="marcarLeidas"
+        android:text="@string/t_marcar_todas_como_leidas" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/linea" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="-10dp" />
+
+        <TextView
+            android:id="@+id/txtSinNotificaciones"
+            style="@style/Upn.Mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/t_no_tienes_notificaciones_por_ahora"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Top Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgLogoUPN"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
+                    android:contentDescription="@string/t_logo_upn"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logoupn" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <!-- HU20: campana con contador de notificaciones sin leer -->
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp">
+
+                    <ImageButton
+                        android:id="@+id/btnNotificaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_boton_atras"
+                        android:contentDescription="@string/t_notificaciones"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_campana"
+                        android:tooltipText="@string/t_notificaciones" />
+
+                    <TextView
+                        android:id="@+id/badgeNotificaciones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:elevation="2dp"
+                        android:gravity="center"
+                        android:minWidth="18dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="0"
+                        android:textColor="@color/blanco_fijo"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <!-- Avatar: inicial del usuario en círculo amarillo (abre el perfil) -->
+                <FrameLayout
+                    android:id="@+id/btnPerfil"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_avatar"
+                    android:clickable="true"
+                    android:contentDescription="@string/t_mi_perfil"
+                    android:focusable="true"
+                    android:onClick="perfil"
+                    android:tooltipText="@string/t_mi_perfil">
+
+                    <TextView
+                        android:id="@+id/txtInicialPerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:textColor="@color/negro_fijo"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imgIconoPerfil"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_persona"
+                        app:tint="@color/negro_fijo" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!-- Welcome Banner -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/t_bienvenido_a_intercambio_upn"
+                android:textColor="@color/texto"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/t_encuentra_comparte_e_intercambia_tus_m"
+                android:textColor="@color/texto_secundario"
+                android:textSize="14sp" />
+
+            <!-- Search Bar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuscarMaterial"
+                style="@style/Upn.Boton.Amarillo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+            android:minHeight="54dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/t_buscar_material"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_buscar"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="22dp"
+                app:iconTint="@color/negro_fijo"
+                android:onClick="buscar" />
+
+            <!-- Categorías -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/t_categorias"
+                android:textColor="@color/texto"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:useDefaultMargins="true">
+
+                <!-- Libros -->
+                <LinearLayout
+                    android:id="@+id/btnCategoriaLibros"
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_tarjeta_categoria"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="@string/t_libros"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/libro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/t_libros"
+                        android:textColor="@color/texto"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Apuntes -->
+                <LinearLayout
+                    android:id="@+id/btnCategoriaApuntes"
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_tarjeta_categoria"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="@string/t_apuntes"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/apuntes" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/t_apuntes"
+                        android:textColor="@color/texto"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Tecnología -->
+                <LinearLayout
+                    android:id="@+id/btnCategoriaTecnologia"
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_tarjeta_categoria"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="@string/t_tecnologia"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tecnologia" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/t_tecnologia"
+                        android:textColor="@color/texto"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Otros -->
+                <LinearLayout
+                    android:id="@+id/btnCategoriaOtros"
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_tarjeta_categoria"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="@string/t_otros_objetos"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/otros" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/t_otros_objetos"
+                        android:textColor="@color/texto"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </GridLayout>
+
+            <!-- Publicaciones Recientes / Realizadas -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/t_publicaciones_recientes"
+                android:textColor="@color/texto"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/t_materiales_disponibles_compartidos_por"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPublicaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Fixed Bottom Bar: Accesos rápidos (Estático al final de la pantalla) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/superficie_suave"
+        android:baselineAligned="false"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <!-- Publicar -->
+        <LinearLayout
+            android:id="@+id/btnPublicarMaterial"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@string/t_publicar"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_publicar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/t_publicar"
+                android:textColor="@color/texto"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Mis publicaciones -->
+        <LinearLayout
+            android:id="@+id/btnMisPublicaciones"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:onClick="misPublicaciones">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@string/t_mis_publicaciones"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cuaderno" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/t_mis_pubs"
+                android:textColor="@color/texto"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Chat (HU08/HU09) -->
+        <LinearLayout
+            android:id="@+id/btnChat"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@string/t_mensajes"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_chat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/t_chat"
+                android:textColor="@color/texto"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Favoritos -->
+        <LinearLayout
+            android:id="@+id/btnFavoritos"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@string/t_mis_favoritos"
+                android:scaleType="fitCenter"
+                android:src="@drawable/favorito" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/t_favoritos"
+                android:textColor="@color/texto"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Configuración -->
+        <LinearLayout
+            android:id="@+id/btnConfiguracion"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@string/t_configuracion"
+                android:scaleType="fitCenter"
+                android:src="@drawable/configurar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/t_ajustes"
+                android:textColor="@color/texto"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

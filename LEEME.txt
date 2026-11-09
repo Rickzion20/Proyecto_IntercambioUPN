@@ -1,0 +1,8 @@
+VERSION FINAL REVISADA (acumulada: paquetes 1, 2 y 3 + correcciones de la revision)
+
+1) APP: descomprime DENTRO de C:\AndroidProjects\IntercambioUPN y acepta "Reemplazar".
+2) SERVIDOR: copia los 9 archivos .php de PARA_XAMPP\crud_intercambio a C:\xampp\htdocs\crud_intercambio
+   y acepta reemplazar (actualizar_.php y eliminar_.php ahora verifican que seas el dueno).
+3) BASE DE DATOS: si aun no lo hiciste, ejecuta PARA_XAMPP\chat_historial.sql en phpMyAdmin (pestana SQL).
+   Si ya lo ejecutaste, no hace falta repetirlo.
+4) Android Studio: Build > Clean Project y Run. No toca Api.java (tu IP se mantiene).

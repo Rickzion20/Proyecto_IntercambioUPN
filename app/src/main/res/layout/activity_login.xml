@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Login con dos modalidades (se elige en seleccionar_acceso):
+      - UPN:   correo @upn.pe + contraseña.
+      - Gmail: "Continuar con Google" o correo @gmail.com + contraseña.
+    Los textos de cada modalidad se ponen desde login.java.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fillViewport="true"
+    tools:context=".login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/btnCambiarAcceso"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-4dp"
+            android:background="@drawable/bg_boton_atras"
+            android:contentDescription="@string/t_elegir_otro_tipo_de_acceso"
+            android:onClick="cambiarAcceso"
+            android:scaleType="center"
+            android:src="@drawable/ic_atras"
+            android:tooltipText="@string/t_elegir_otro_tipo_de_acceso" />
+
+        <ImageView
+            android:id="@+id/imgLogoUPN"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/t_logo_de_la_upn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logoupn" />
+
+        <!-- Etiqueta de la modalidad (amarilla = UPN, gris = Gmail) -->
+        <TextView
+            android:id="@+id/txtModoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_etiqueta_modo"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/t_estudiante_upn_2"
+            android:textColor="@color/texto"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtTituloLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/t_iniciar_sesion"
+            android:textColor="@color/texto"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtSubtituloLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/t_usa_tu_correo_institucional_y_tu_contr"
+            android:textColor="@color/texto_secundario"
+            android:textSize="15sp" />
+
+        <!-- Solo en modo Gmail -->
+        <LinearLayout
+            android:id="@+id/layoutGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoogle"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+            android:minHeight="56dp"
+                android:layout_marginTop="24dp"
+                android:onClick="continuarConGoogle"
+                android:text="@string/t_continuar_con_google"
+                android:textAllCaps="false"
+                android:textColor="@color/texto"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_persona"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconTint="@color/icono"
+                app:strokeColor="@color/linea_campo" />
+
+            <TextView
+                style="@style/Upn.Ayuda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/t_o_ingresa_con_tu_correo_y_contrasena" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCorreo"
+            style="@style/Upn.Campo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/t_correo_institucional"
+            app:placeholderText="@string/t_n00123456_upn_pe">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilContrasena"
+            style="@style/Upn.Campo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/t_contrasena"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/btnRecuperarContrasena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:onClick="recuperarContrasena"
+            android:paddingStart="12dp"
+            android:text="@string/t_olvidaste_tu_contrasena"
+            android:textColor="@color/enlace"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIniciarSesion"
+            style="@style/Upn.Boton.Amarillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:layout_marginTop="12dp"
+            android:onClick="iniciarSesion"
+            android:text="@string/t_iniciar_sesion"
+            app:cornerRadius="14dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/t_todavia_no_tienes_una_cuenta"
+            android:textColor="@color/texto_secundario"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCrearCuenta"
+            style="@style/Upn.Boton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="52dp"
+            android:layout_marginTop="8dp"
+            android:onClick="irCrearCuenta"
+            android:text="@string/t_crear_cuenta"
+            android:textColor="@color/amarillo"
+            android:textStyle="bold"
+            app:backgroundTint="@color/boton_negro"
+            app:cornerRadius="14dp" />
+
+    </LinearLayout>
+</ScrollView>
